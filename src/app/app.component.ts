@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'squad_gen_app';
+  inputNames = ' ';
+  setInputNames: string[] = [];
+
+  onInput = (addMember: string) => {
+    this.inputNames = addMember
+    console.log(this.inputNames);
+  }
+
+  onAdd() {
+    this.setInputNames.push(this.inputNames)
+    this.inputNames = ''
+    console.log(this.setInputNames);
+  }
+
 }
