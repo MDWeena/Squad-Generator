@@ -43,7 +43,8 @@ export class AppComponent {
         const randomSelect = Math.floor(Math.random() * allMembers.length);
         const member = allMembers.splice(randomSelect, 1)[0];
         console.log(randomSelect);
-  
+        
+        if(!member)break;
         if (this.teams[i]) {
           this.teams[i].push(member)
         }else{
@@ -52,6 +53,7 @@ export class AppComponent {
       }
     }
 
+    console.log(this.teams);
     
   };
 }
