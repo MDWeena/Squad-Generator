@@ -1,67 +1,121 @@
 .container {
-    padding: 4rem;
-    width: 40rem;
-    margin: 0 auto;
-  }
-  
-  h1 {
-    font-size: 3rem;
-  }
-  
-  .list {
-    padding: 1rem;
-    width: 100%;
-    height: 10rem;
-    border: 0.1rem solid grey;
-    overflow: auto;
-  }
-  
-  .add-members-container input {
-    border: none;
-    border-bottom: 0.1rem solid rgba(128, 128, 128, 0.418);
-    margin-right: 0.5rem;
-    width: 100%;
-    display: flex;
-  }
-  
-  .add-members-container button {
-    width: 100%;
-    border: none;
-    color: white;
-    font-weight: 400;
-    cursor: pointer;
-    background-color: rgb(0, 53, 139);
-    margin-top: 0.5rem;
-  }
-  
-  .input-container {
-    margin: 2rem 0;
-    display: flex;
-    height: 2rem;
-  }
-  
-  .input-container button {
-    width: 50%;
-    background-color: darkcyan;
-    border: none;
-    color: white;
-  }
-  
-  .input-container input {
-    width: 50%;
-  }
-  
-  .card {
-    padding: 2rem;
-    width: 100%;
-  }
-  
-  .error-msg {
-    color: red;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0rem;
+  width: 35rem;
+  margin: 0 auto;
+  border-radius: 1em;
+}
+.container::after {
+  position: absolute;
+  width: 35rem;
+  height: 35rem;
+  content: "";
+  background-image: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: rotate(4deg);
+  border-radius: 1em 1em 0 0;
+  z-index: -1;
+}
 
-  li{
-      list-style-type: none;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-  }
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2em;
+  margin: auto;
+  border-radius: 1em 1em 0 0;
+  width: 100%;
+  background-color: rgb(0, 45, 65);
+}
+
+.body {
+  border: 0.1rem solid grey;
+  padding: 1.5em 3em;
+  background-color: rgb(205, 233, 245);
+}
+
+header > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: rgb(205, 233, 245);
+  margin: auto;
+}
+
+.list {
+  padding: 1rem;
+  width: 100%;
+  height: 10rem;
+  border: 0.1rem solid grey;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.add-members-container input {
+  border: none;
+  border-bottom: 0.1rem solid rgba(128, 128, 128, 0.418);
+  margin-right: 0.5rem;
+  width: 100%;
+  height: 2em;
+  display: flex;
+  background-color: rgb(205, 233, 245);
+}
+
+.add-members-container button {
+  width: 100%;
+  height: 2.5em;
+  border-radius: 1em;
+  border: none;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+  background-color: rgb(0, 45, 65);
+  margin-top: 0.5rem;
+}
+.add-members-container button:hover {
+  background-color: rgb(1, 61, 87);
+}
+
+.input-container {
+  margin: 2rem 0;
+  display: flex;
+  height: 2.5rem;
+}
+
+.input-container button {
+  width: 50%;
+  background-color: rgb(0, 45, 65);
+  border: none;
+  color: white;
+  height: 2.5em;
+  border-radius: 0 1em 1em 0;
+}
+
+.input-container input {
+  width: 50%;
+}
+
+.card {
+  padding: 2rem;
+  width: 100%;
+}
+
+.error-msg {
+  color: red;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  font-size: 1em;
+  font-weight: 600;
+  right: 50%;
+  padding: 0;
+}

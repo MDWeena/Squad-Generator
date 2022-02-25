@@ -11,10 +11,10 @@ export class AppComponent {
   errorMessage: string = '';
   numTeamInput: number | '' = '';
   teams: string[][] = [];
+  currentYear: number = new Date().getFullYear();
 
   onInput = (addMember: string) => {
     this.inputNames = addMember;
-    console.log(this.inputNames);
   };
 
   onNumTeamInput = (numTeam: string) => {
@@ -29,31 +29,36 @@ export class AppComponent {
     this.errorMessage = '';
     this.setInputNames.push(this.inputNames);
     this.inputNames = '';
-    console.log(this.setInputNames);
   };
 
   onGenerate = () => {
     if (!this.numTeamInput || this.numTeamInput <= 0) {
+      this.errorMessage = 'Invalid input';
       return;
     }
+    this.errorMessage = '';
+
     const allMembers = [...this.setInputNames];
 
-    while (allMembers) {
-      for (let i = 0; i < allMembers.length; i++) {
+    if (this.numTeamInput > allMembers.length) {
+      this.errorMessage = 'Teams more than members';
+      return;
+    }
+
+    while (allMembers.length) {
+      for (let i = 0; i < this.numTeamInput; i++) {
         const randomSelect = Math.floor(Math.random() * allMembers.length);
         const member = allMembers.splice(randomSelect, 1)[0];
-        console.log(randomSelect);
-        
-        if(!member)break;
+
+        if (!member) break;
         if (this.teams[i]) {
-          this.teams[i].push(member)
-        }else{
-          this.teams[i] = [member]
+          this.teams[i].push(member);
+        } else {
+          this.teams[i] = [member];
         }
       }
     }
-
-    console.log(this.teams);
-    
+    this.numTeamInput = '';
+    this.setInputNames = [];
   };
 }

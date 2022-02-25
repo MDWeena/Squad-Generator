@@ -1,8 +1,16 @@
 <div class="container">
-  <div class="ui card">
+  <header>
+    <img
+      src="https://res.cloudinary.com/weena/image/upload/v1645790503/logo_2_zujh9j.jpg"
+      alt="logo"
+    />
     <h1>Squad Generator</h1>
+  </header>
+  <div class="body">
     <ul class="list">
-      <li *ngFor="let setInputName of setInputNames">{{ setInputName }}</li>
+      <li *ngFor="let setInputName of setInputNames">
+        {{ setInputName | titlecase }}
+      </li>
     </ul>
     <div class="add-members-container">
       <input
@@ -22,9 +30,20 @@
         (input)="onNumTeamInput(numTeam.value)"
         [value]="numTeamInput"
         placeholder="No of teams"
+        (keyup.enter)="onGenerate()"
       />
-      <button (click)="onGenerate()" >Generate</button>
+      <button (click)="onGenerate()">Generate</button>
     </div>
     <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
+
+    <div *ngIf="teams.length" class="teams-container">
+      <app-team
+        *ngFor="let team of teams; let i = index"
+        [team]="team"
+        [index]="i"
+      ></app-team>
+    </div>
   </div>
+
+  <footer>. . .Copyright &copy; {{ currentYear }} MDWeena</footer>
 </div>
