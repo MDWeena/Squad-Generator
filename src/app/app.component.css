@@ -7,6 +7,7 @@
   margin: 0 auto;
   border-radius: 1em;
 }
+
 .container::after {
   position: absolute;
   width: 35rem;
@@ -118,4 +119,33 @@ footer {
   font-weight: 600;
   right: 50%;
   padding: 0;
+  transform: translate(50%)
+}
+
+
+@media (max-width: 550px) {
+  .container{
+    width: 20rem;
+  }
+  .container::after{
+    width: 20em;
+    height: 33em;
+  }
+  h1{
+    font-size: 2rem;
+    text-align: center;
+  }
+  .list{
+    height: 6rem;
+  }
+  .input-container input{
+    font-size: .7em;
+  }
+  .input-container button{
+    width: 70%;
+  }
+  footer{
+    width: 70%;
+  }
+  
 }
