@@ -112,40 +112,35 @@ h1 {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  margin: auto;
-  font-size: 1em;
-  font-weight: 600;
-  right: 50%;
-  padding: 0;
-  transform: translate(50%, 100%)
+  position: relative;
+  width: 100%;
+  margin-top: 2em;
+  text-align: center;
 }
 
-
 @media (max-width: 550px) {
-  .container{
+  .container {
     width: 20rem;
   }
-  .container::after{
+  .container::after {
     width: 20em;
-    height: 33em;
+    height: 32em;
+    top: 5rem;
   }
-  h1{
+  h1 {
     font-size: 2rem;
     text-align: center;
   }
-  .list{
+  .list {
     height: 6rem;
   }
-  .input-container input{
-    font-size: .7em;
+  .input-container input {
+    font-size: 0.7em;
   }
-  .input-container button{
+  .input-container button {
     width: 70%;
   }
-  footer{
-    width: 70%;
+  footer {
+    margin-top: 3em;
   }
-  
 }
