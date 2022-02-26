@@ -144,3 +144,30 @@ footer {
     margin-top: 3em;
   }
 }
+
+@media (max-width: 320px) {
+  .container {
+    width: 15rem; 
+  }
+  .container::after {
+    width: 20em;
+    height: 32em;
+    top: 5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .list {
+    height: 6rem;
+  }
+  .input-container input {
+    font-size: 0.7em;
+  }
+  .input-container button {
+    width: 70%;
+  }
+  footer {
+    margin-top: 3em;
+  }
+}
