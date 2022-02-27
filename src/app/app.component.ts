@@ -27,7 +27,7 @@ export class AppComponent {
       return;
     }
     this.errorMessage = '';
-    this.setInputNames.push(this.inputNames);
+    this.setInputNames.push(...this.inputNames.split(','));
     this.inputNames = '';
   };
 
